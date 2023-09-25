@@ -4,7 +4,7 @@ const authMiddleware = async(req,res,next)=>{
 
     const {authorization} = req.headers;
 
-    const token = authorization.split(" ")[1];
+    const token = authorization?.split(" ")[1];
 
     try {
 
@@ -21,7 +21,7 @@ const authMiddleware = async(req,res,next)=>{
         
     } catch (error) {
         
-        res.send({msg:error})
+        res.send({msg:"Please Login First"})
     }
 }
 
