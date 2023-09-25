@@ -13,7 +13,7 @@ route.post("/signup",async(req,res)=>{
 
         await User.create({...req.body,password:newPass,confirm_password:newPass});
 
-        res.send("New User is Registered")
+        res.send({msg:"New User Registered"})
 
         
     } catch (error) {
